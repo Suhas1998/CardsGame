@@ -7,6 +7,5 @@
   Hi {{ user.username }}!
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
-  <a href="{% url 'signup' %}">signup</a>
 {% endif %}
 {% endblock %}

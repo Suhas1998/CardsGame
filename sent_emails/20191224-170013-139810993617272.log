@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: Jaggi@gmail.com
+Date: Tue, 24 Dec 2019 17:00:13 -0000
+Message-ID: <157720681332.4899.6899189950799166810@suhas-23>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/users/reset/OQ/5cj-b5e51cd117ae11ac3e36/
+
+Your username, in case you've forgotten: Jaaggi
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

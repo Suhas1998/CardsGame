@@ -5,29 +5,32 @@
 {% block content %}
 <div class="screen">
   <div class="login-screen">
-    </div>
-    <div class="container">
-        <div class="form-container">
-          <form method="post" class="login-form">
-            {% csrf_token %}
-            <span class="login-form-title">Login</span>
-            <div class="wrap-input">
-              <!-- <input type="hidden" name="csrfmiddlewaretoken" value="mn8xqTmSd6IUsq1r5U5LcyVK4x4VzuotL65fV3oKE53OfUP12NY10wsPYpSZTGOv"> -->
-              <input class="input100" type="text" name="username" placeholder="Email" autofocus autocapitalize="none" maxlength="150" required id="id_username">
-            </div>
-            <div class="wrap-input">
-              <input class="input100" type="password" name="password" placeholder="Password" required id="id_password">
-            </div>
-            <div class="container-login-form-btn">
-              <button type="submit" class="btn login-form-btn">Login</button>
-            </div>
-            <div class="form-msg">
-              <span class="msg-txt">Not a member?</span>
-              <a class="msg-txt" href="{% url 'signup' %}">Sign up now</a>
-            </div>
-          </form>
-        </div>
-    </div>
+  </div>
+  <div class="container">
+      <div class="form-container">
+        <form method="post" class="login-form">
+          {% csrf_token %}
+          <span class="login-form-title">Login</span>
+          <div class="wrap-input">
+            <!-- <input type="hidden" name="csrfmiddlewaretoken" value="mn8xqTmSd6IUsq1r5U5LcyVK4x4VzuotL65fV3oKE53OfUP12NY10wsPYpSZTGOv"> -->
+            <span class="icon-symbol" ><i class="fa fa-user-o fa-lg icon"></i></span>
+            <input class="input100" type="text" name="username" placeholder="Username" autofocus autocapitalize="none" maxlength="150" required id="id_username">
+          </div>
+          <div class="wrap-input">
+            <span class="icon-symbol" ><i class="fa fa-lock fa-lg icon"></i></span>
+            <input class="input100" type="password" name="password" placeholder="Password" required id="id_password">
+          </div>
+          <div class="container-login-form-btn">
+            <button type="submit" class="btn login-form-btn">Login</button>
+          </div>
+          <div class="form-msg">
+            <span class="msg-txt">Not a member?</span>
+            <a class="msg-txt" href="{% url 'signup' %}">Sign up now</a> <br>
+            <a class="msg-txt" href="{% url 'password_reset' %}">Forgot password?</a>
+          </div>
+        </form>
+      </div>
+  </div>
 
 </div>
 
