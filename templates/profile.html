@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <img src="{{ user.profile.image.url }}">
+  Hi {{ user.username}}
+  <p> {{ user.email }} </p>
+{% else %}
+{% endif %}
+{% endblock %}

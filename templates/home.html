@@ -3,9 +3,5 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-{% else %}
-{% endif %}
+<p>You are logged out... Go and login</p>
 {% endblock %}

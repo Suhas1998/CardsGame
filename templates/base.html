@@ -26,15 +26,26 @@
 
 
     <ul class="nav_links">
-      <li><a href="#contact">About</a></li>
-      <li><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="#contact">Contact</a></li>
+      {% if user.is_authenticated %}
+        <li><a href="#Games">Games</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="#App">App</a></li>
+      {% else %}
+        <li><a href="#contact">About</a></li>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="#contact">Contact</a></li>
+      {% endif %}
     </ul>
 
 
     <div class="nav_links">
-      <a href="{% url 'login' %}">Login</a>
-      <a href="{% url 'signup' %}">Sign up</a>
+      {% if user.is_authenticated %}
+        <a href="#">{{ user.username }}</a>
+        <a href="{% url 'logout' %}">Log out</a>
+      {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'signup' %}">Sign up</a>
+      {% endif %}
     </div>
 
   </header>
