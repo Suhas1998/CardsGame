@@ -7,6 +7,13 @@ def games_index(request):
   context = {
     "games": games,
   }
+  return render(request, 'games/games_index.html', context)
 
-  return render(request, 'games_index.html', context)
+def game_play(request, game):
+  game = Game.objects.get(name=game)
 
+  context = {
+    "game" : game,
+  }
+
+  return render(request, "games/game_play.html", context)
