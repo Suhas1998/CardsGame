@@ -4,4 +4,11 @@
   {% block content %}
     <h2>This is home page for games</h2>
     <p>Hey {{ user.username }}</p>
+
+    {% for game in games %}
+
+      <h2>{{ game.name }}</h2>
+
+    {% endfor %}
+
 {% endblock %}
