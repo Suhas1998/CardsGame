@@ -9,6 +9,10 @@
 </head>
 <body>
   <div class="wrapper">
+    <input type="checkbox" id="check">
+    <label for="check" class="bar">
+      <i class="fas fa-caret-right fa-2x" id="btn"></i>
+    </label>
     <div class="sidebar">
       <div class="username">
         <span>{{user.username}}</span>
@@ -18,12 +22,12 @@
       </div>
       <div class="links">
         <ul>
-          <li><a href="{% url 'portfolio' %}"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
-          <li><a href="{% url 'profile' %}"><i class="fas fa-address-card"></i>Profile</a></li>
-          <li><a href="#App"><i class="fas fa-calendar-check"></i>Apps</a></li>
-          <li><a href="{% url 'games_index' %}"><i class="fas fa-gamepad"></i>Games</a></li>
-          <li><a href="#"><i class="fas fa-info-circle"></i>About</a></li>
-          <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+          <li><a href="{% url 'portfolio' %}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+          <li><a href="{% url 'profile' %}"><i class="fas fa-address-card"></i><span>Profile</span></a></li>
+          <li><a href="#App"><i class="fas fa-calendar-check"></i><span>Apps</span></a></li>
+          <li><a href="{% url 'games_index' %}"><i class="fas fa-gamepad"></i><span>Games</span></a></li>
+          <li><a href="#"><i class="fas fa-info-circle"></i><span>About</span></a></li>
+          <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
         </ul>
       </div>
       <div class="social_media">
@@ -36,6 +40,9 @@
         {% block content %}
 
         {% endblock %}
+        <ul>
+          <li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li><li>d</li>
+        </ul>
     </div>
 
   </div>

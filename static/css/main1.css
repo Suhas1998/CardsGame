@@ -233,7 +233,18 @@ a.msg-txt:hover{
 .wrapper{
   display: flex;
   position: relative;
-  background-color: var(--LightViolet-color);
+  background-color: var(--White-color);
+  flex-direction: row;
+}
+
+.bar{
+  display: flex;
+  z-index: 1;
+  position: fixed;
+  height: 100%;
+  align-items: center;
+  left: 250px;
+  transition-duration: 0.5s;
 }
 
 .sidebar {
@@ -241,9 +252,10 @@ a.msg-txt:hover{
   background-color: var(--DarkViolet-color);
   position: fixed;
   height: 100%;
-  width: 200px;
+  width: 250px;
   flex-direction: column;
   padding: 20px 0;
+  transition-duration: 0.5s;
 }
 
 .sidebar div {
@@ -269,7 +281,7 @@ a.msg-txt:hover{
 
 .sidebar ul li {
   padding: 15px 20px;
-  border-bottom: 1px solid rgba(30,31,38,0.05);
+  border-bottom: 1px solid rgba(29,4,43,0.05);
   border-top: 1px solid rgba(225,225,225,0.05);
   cursor: pointer;
 }
@@ -284,6 +296,7 @@ a.msg-txt:hover{
 }
 
 .sidebar ul li:hover{
+  padding-left: 25px;
   background-color: var(--MediumViolet-color);
   transition: 0.5s;
 }
@@ -312,12 +325,52 @@ a.msg-txt:hover{
 .main_content {
   background-color: var(--White-color);
   width: 100%;
-  margin: 10px 10px 10px 210px;
-  border-radius: 10px;
-  min-height: 100VH;
-
+  margin: 0 0 0 270px;
+  transition-duration: 0.5s;
 }
 
+/*Side bar animation*/
+label #btn{
+  cursor: pointer;
+  z-index: 1;
+  padding: 20px 2px  20px 5px;
+  border-radius: 0;
+  border-radius: 0 15px 15px 0;
+  left: 500px;
+  background-color: var(--DarkViolet-color);
+  color: var(--White-color);
+}
+
+label #btn:hover{
+  background-color: var(--MediumViolet-color);
+  transition-duration: 0.5s;
+  padding-left: 10px;
+}
+#check{
+  display: none;
+}
+#check:checked ~ .sidebar{
+  width: 70px;
+  transition-duration: 0.5s;
+  font-size: 0px;
+}
+#check:checked ~ .sidebar span{
+  font-size: 0px;
+  transition-duration: 0.5s;
+}
+#check:checked ~ .bar{
+  left: 70px;
+  transition-duration: 0.5s;
+}
+#check:not(:checked) ~ .bar #btn{
+  border-radius: 0;
+  transform: rotate(180deg);
+  border-radius: 15px 0 0 15px;
+}
+#check:checked ~ .main_content{
+  margin-left: 90px;
+  transition-duration: 0.5s;
+}
 /*Media Queries*/
 @media screen and (max-width: 650px) {
   header{
