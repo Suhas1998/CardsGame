@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static%}
+  <title>Logged in base</title>
+  <meta charset="utf-8">
+  <script src="https://kit.fontawesome.com/42f020cdf9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="{% static "/css/main1.css" %}">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+      <div class="username">
+        <span>{{user.username}}</span>
+      </div>
+      <div class="image">
+        <img class="profile-pic" src="{{user.profile.image.url}}">
+      </div>
+      <div class="links">
+        <ul>
+          <li><a href="{% url 'portfolio' %}"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+          <li><a href="{% url 'profile' %}"><i class="fas fa-address-card"></i>Profile</a></li>
+          <li><a href="#App"><i class="fas fa-calendar-check"></i>Apps</a></li>
+          <li><a href="{% url 'games_index' %}"><i class="fas fa-gamepad"></i>Games</a></li>
+          <li><a href="#"><i class="fas fa-info-circle"></i>About</a></li>
+          <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+        </ul>
+      </div>
+      <div class="social_media">
+        <a href="#"><i class="fab fa-facebook-f fab-3"></i></a>
+        <a href="#"><i class="fab fa-twitter fab-3"></i></a>
+        <a href="#"><i class="fab fa-instagram fab-3"></i></a>
+      </div>
+    </div>
+    <div class="main_content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+  </div>
+
+</body>
+</html>
