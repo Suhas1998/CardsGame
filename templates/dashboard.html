@@ -1,0 +1,39 @@
+{% extends 'base-user.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  {% load static %}
+  <p>This will be the dashboard</p>
+
+  <div>
+    <p>Whats the weather like</p>
+  </div>
+
+  <form method="POST">
+    <div class="control is-expanded">
+      <input class="input" type="text" placeholder="City Name">
+    </div>
+    <div class="control">
+      <button class="button is-info">
+          Add City
+      </button>
+    </div>
+  </form>
+
+  <div class="media-left">
+      <figure class="image is-50x50">
+          <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+      </figure>
+  </div>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <span class="title">{{ weather.city }}</span>
+        <br>
+        <span class="subtitle">{{ weather.temperature }}° F</span>
+        <br> {{ weather.description }}
+      </p>
+    </div>
+  </div>
+{% endblock %}

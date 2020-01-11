@@ -5,6 +5,7 @@ from .forms import CustomUserCreationForm, UserUpdateForm , ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
+import requests
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
@@ -31,3 +32,20 @@ def profile(request):
   }
 
   return render(request, 'registration/profile.html', context)
+
+
+def createdashboard(request):
+  url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=4b4857337408a4e1fe365b3bfdc7374d'
+  city = 'Guwahati'
+  city_weather  = requests.get(url.format(city)).json()
+
+  weather = {
+        'city' : city,
+        'temperature' : city_weather['main']['temp'],
+        'description' : city_weather['weather'][0]['description'],
+        'icon' : city_weather['weather'][0]['icon']
+    }
+
+  context = {'weather' : weather}
+
+  return render(request, 'dashboard.html', context) #returns the index.html template
