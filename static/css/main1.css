@@ -24,13 +24,6 @@ body{
   background-color: var(--White-color);
 }
 
-li, a, button {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: #edf0f1;
-  text-transform: none;
-}
 
 /*NAVIGATION BAR*/
 header {

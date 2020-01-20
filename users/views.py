@@ -69,4 +69,5 @@ def createdashboard(request):
               "todos": todos,
               "categories":categories
               }
+
   return render(request, 'dashboard.html', context) #returns the dashboard.html template
