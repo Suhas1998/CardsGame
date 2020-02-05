@@ -236,7 +236,7 @@ a.msg-txt:hover{
   position: fixed;
   height: 100%;
   align-items: center;
-  left: 250px;
+  left: 200px;
   transition-duration: 0.5s;
 }
 
@@ -245,10 +245,11 @@ a.msg-txt:hover{
   background-color: var(--DarkViolet-color);
   position: fixed;
   height: 100%;
-  width: 250px;
+  width: 200px;
   flex-direction: column;
   padding: 20px 0;
   transition-duration: 0.5s;
+  z-index: 10;
 }
 
 .sidebar div {
@@ -316,17 +317,28 @@ a.msg-txt:hover{
   transition: 0.5s;
 }
 
-.main_content {
-  background-color: var(--White-color);
+.main_body{
   width: 100%;
-  margin: 0 0 0 270px;
   transition-duration: 0.5s;
 }
+.top_bar{
+  z-index: 5;
+  background-color: red;
+  width: 100%;
+  height: 60px;
+}
 
+.main_content{
+  background-color: var(--White-color);
+  width: 100%;
+  margin-left: 225px;
+  transition-duration: 0.5s;
+}
 /*Side bar animation*/
 label #btn{
   cursor: pointer;
-  z-index: 1;
+    transition: none;
+  z-index: 10;
   padding: 20px 2px  20px 5px;
   border-radius: 0;
   border-radius: 0 15px 15px 0;
@@ -344,25 +356,26 @@ label #btn:hover{
   display: none;
 }
 #check:checked ~ .sidebar{
-  width: 70px;
+  width: 5px;
   transition-duration: 0.5s;
   font-size: 0px;
 }
-#check:checked ~ .sidebar span{
-  font-size: 0px;
+#check:checked ~ .sidebar div{
+  visibility: hidden;
   transition-duration: 0.5s;
 }
 #check:checked ~ .bar{
-  left: 70px;
+  left: 5px;
   transition-duration: 0.5s;
 }
 #check:not(:checked) ~ .bar #btn{
   border-radius: 0;
+  transition: none;
   transform: rotate(180deg);
   border-radius: 15px 0 0 15px;
 }
-#check:checked ~ .main_content{
-  margin-left: 90px;
+#check:checked ~ .main_body .main_content{
+  margin-left: 30px;
   transition-duration: 0.5s;
 }
 /*Media Queries*/
@@ -384,7 +397,7 @@ label #btn:hover{
 
 @media screen and (max-width: 650px) {
   .sidebar {
-    width: 60px;
+    width: 0px;
   }
 }
 
